@@ -49,6 +49,7 @@ public struct Product: Codable, Equatable, Sendable {
     public let packagingQuantity: Double?
     public let servingSize: String?
     public let servingQuantity: Double?
+    public let servingQuantityUnit: String?
     public let dataPer: String?
     public let categories: String?
     public var nutriments: [String: Any]?
@@ -69,6 +70,7 @@ public struct Product: Codable, Equatable, Sendable {
         case productNameEn = "product_name_en"
         case servingSize = "serving_size"
         case servingQuantity = "serving_quantity"
+        case servingQuantityUnit = "serving_quantity_unit"
         case dataPer = "nutrition_data_per"
         case nutriments = "nutriments"
         case imageFront = "image_front_url"
@@ -85,6 +87,7 @@ public struct Product: Codable, Equatable, Sendable {
         productNameEn = try container.decodeIfPresent(String.self, forKey: .productNameEn)
         quantity = try container.decodeIfPresent(String.self, forKey: .quantity)
         servingSize = try container.decodeIfPresent(String.self, forKey: .servingSize)
+        servingQuantityUnit = try container.decodeIfPresent(String.self, forKey: .servingQuantityUnit)
         dataPer = try container.decodeIfPresent(String.self, forKey: .dataPer)
         categories = try container.decodeIfPresent(String.self, forKey: .categories)
         imageFront = try container.decodeIfPresent(String.self, forKey: .imageFront)
@@ -138,6 +141,7 @@ public struct Product: Codable, Equatable, Sendable {
         try container.encodeIfPresent(packagingQuantity, forKey: .packagingQuantity)
         try container.encodeIfPresent(servingSize, forKey: .servingSize)
         try container.encodeIfPresent(servingQuantity, forKey: .servingQuantity)
+        try container.encodeIfPresent(servingQuantityUnit, forKey: .servingQuantityUnit)
         try container.encodeIfPresent(dataPer, forKey: .dataPer)
         try container.encodeIfPresent(categories, forKey: .categories)
         try container.encodeIfPresent(imageFront, forKey: .imageFront)

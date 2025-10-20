@@ -22,6 +22,7 @@ public enum ProductField: String {
     case quantity = "quantity"
     case servingSize = "serving_size"
     case servingQuantity = "serving_quantity"
+    case servingQuantityUnit = "serving_quantity_unit"
     case packagingQuantity = "product_quantity"
     case frontImage = "image_small_url"
     case selectedImage = "selected_images"
